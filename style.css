@@ -282,6 +282,7 @@ body {
   justify-content: center;
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-green) 100%);
   overflow: hidden;
+  padding: 0 1rem;
 }
 
 .hero::before {
@@ -312,6 +313,7 @@ body {
   z-index: 2;
   text-align: center;
   max-width: 800px;
+  width: 100%;
   padding: 0 var(--spacing-md);
   animation: fadeInUp 1s ease-out;
 }
@@ -325,6 +327,8 @@ body {
   line-height: 1.15;
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   letter-spacing: -0.5px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-subtitle {
@@ -2059,6 +2063,12 @@ body {
 
   .hero {
     min-height: 550px;
+    height: auto;
+    padding: var(--spacing-xl) 1rem;
+  }
+
+  .hero-content {
+    padding: 0 var(--spacing-sm);
   }
 
   .hero-badge {
@@ -2072,20 +2082,29 @@ body {
   }
 
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2rem;
+    line-height: 1.2;
   }
 
   .title-highlight {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
+    display: block;
   }
 
   .hero-subtitle {
-    font-size: 1.0625rem;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .hero-buttons {
     flex-direction: column;
     width: 100%;
+    gap: var(--spacing-sm);
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-feature {
@@ -2196,6 +2215,13 @@ body {
     height: 240px;
   }
 
+  .team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
   .team-name {
     font-size: 1rem;
   }
@@ -2274,6 +2300,8 @@ body {
 
   .hero {
     min-height: 500px;
+    height: auto;
+    padding: var(--spacing-lg) 0.75rem;
   }
 
   .hero-badge {
@@ -2287,16 +2315,22 @@ body {
   }
 
   .hero-title {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin-bottom: var(--spacing-sm);
   }
 
   .title-highlight {
-    font-size: 2.25rem;
+    font-size: 2.125rem;
+    display: block;
+    margin-top: 0.5rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: var(--spacing-lg);
+    font-size: 0.9375rem;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+    padding: 0 0.5rem;
   }
 
   .hero-buttons {
@@ -2316,10 +2350,20 @@ body {
     height: 420px;
     max-width: 400px;
     margin: 0 auto;
+    width: 100%;
   }
 
   .team-image {
     height: 280px;
+    width: 100%;
+  }
+
+  .team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
   }
 
   .team-content {
