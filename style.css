@@ -807,10 +807,11 @@ body {
 /* --- Galerie Polaroid --- */
 .product-gallery {
   position: relative;
-  min-height: 580px;
+  min-height: 650px;
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1000px;
 }
 
 .polaroid {
@@ -847,10 +848,81 @@ body {
 
 .polaroid-3 {
   width: 200px;
-  bottom: -30px;
+  bottom: -60px;
   left: 25%;
   transform: rotate(-3deg);
   z-index: 1;
+}
+
+/* --- Animation 3D automatique --- */
+@keyframes polaroidPulse1 {
+  0%, 33.33%, 100% {
+    transform: rotate(-6deg) scale(1) translateZ(0);
+    z-index: 3;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  5% {
+    transform: rotate(-2deg) scale(1.12) translateZ(40px);
+    z-index: 20;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  28% {
+    transform: rotate(-2deg) scale(1.12) translateZ(40px);
+    z-index: 20;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes polaroidPulse2 {
+  0%, 33.33%, 66.66%, 100% {
+    transform: rotate(4deg) scale(1) translateZ(0);
+    z-index: 2;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  38% {
+    transform: rotate(1deg) scale(1.12) translateZ(40px);
+    z-index: 20;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  61% {
+    transform: rotate(1deg) scale(1.12) translateZ(40px);
+    z-index: 20;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes polaroidPulse3 {
+  0%, 66.66%, 100% {
+    transform: rotate(-3deg) scale(1) translateZ(0);
+    z-index: 1;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  71% {
+    transform: rotate(-1deg) scale(1.12) translateZ(40px);
+    z-index: 20;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  95% {
+    transform: rotate(-1deg) scale(1.12) translateZ(40px);
+    z-index: 20;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.polaroid-1 {
+  animation: polaroidPulse1 6s ease-in-out infinite;
+}
+
+.polaroid-2 {
+  animation: polaroidPulse2 6s ease-in-out infinite;
+}
+
+.polaroid-3 {
+  animation: polaroidPulse3 6s ease-in-out infinite;
+}
+
+.polaroid:hover {
+  animation-play-state: paused;
 }
 
 .polaroid-inner {
