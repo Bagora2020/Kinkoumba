@@ -807,7 +807,7 @@ body {
 /* --- Galerie Polaroid --- */
 .product-gallery {
   position: relative;
-  min-height: 520px;
+  min-height: 580px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -847,7 +847,7 @@ body {
 
 .polaroid-3 {
   width: 200px;
-  bottom: 20px;
+  bottom: -30px;
   left: 25%;
   transform: rotate(-3deg);
   z-index: 1;
