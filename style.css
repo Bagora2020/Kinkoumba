@@ -1707,6 +1707,105 @@ body {
   flex-shrink: 0;
 }
 
+/* --- Section Partenaires --- */
+.partners {
+  background: var(--bg-light);
+  overflow: hidden;
+}
+
+.partners-track {
+  overflow: hidden;
+  position: relative;
+  padding: var(--spacing-md) 0;
+}
+
+.partners-track::before,
+.partners-track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partners-track::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-light), transparent);
+}
+
+.partners-track::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-light), transparent);
+}
+
+.partners-slider {
+  display: flex;
+  gap: 2.5rem;
+  animation: scrollPartners 20s linear infinite;
+  width: max-content;
+}
+
+@keyframes scrollPartners {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.partners-slider:hover {
+  animation-play-state: paused;
+}
+
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.partner-logo-box {
+  width: 160px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.partner-card:hover .partner-logo-box {
+  border-color: var(--light-green);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.partner-logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.partner-logo-img {
+  max-width: 80%;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+.partner-name {
+  font-size: 0.8125rem;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
 .footer {
   position: relative;
   background: linear-gradient(135deg, #002818 0%, var(--dark-green) 50%, #003d2b 100%);
