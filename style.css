@@ -837,7 +837,7 @@ body {
 /* --- Galerie Polaroid --- */
 .product-gallery {
   position: relative;
-  min-height: 650px;
+  min-height: 750px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -878,25 +878,33 @@ body {
 
 .polaroid-3 {
   width: 200px;
-  bottom: -60px;
+  bottom: 60px;
   left: 25%;
   transform: rotate(-3deg);
   z-index: 1;
 }
 
+.polaroid-4 {
+  width: 210px;
+  bottom: -80px;
+  right: 10%;
+  transform: rotate(3deg);
+  z-index: 1;
+}
+
 /* --- Animation 3D automatique --- */
 @keyframes polaroidPulse1 {
-  0%, 33.33%, 100% {
+  0%, 25%, 100% {
     transform: rotate(-6deg) scale(1) translateZ(0);
     z-index: 3;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
   }
-  5% {
+  3% {
     transform: rotate(-2deg) scale(1.12) translateZ(40px);
     z-index: 20;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
   }
-  28% {
+  22% {
     transform: rotate(-2deg) scale(1.12) translateZ(40px);
     z-index: 20;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -904,17 +912,17 @@ body {
 }
 
 @keyframes polaroidPulse2 {
-  0%, 33.33%, 66.66%, 100% {
+  0%, 25%, 50%, 100% {
     transform: rotate(4deg) scale(1) translateZ(0);
     z-index: 2;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
   }
-  38% {
+  28% {
     transform: rotate(1deg) scale(1.12) translateZ(40px);
     z-index: 20;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
   }
-  61% {
+  47% {
     transform: rotate(1deg) scale(1.12) translateZ(40px);
     z-index: 20;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -922,33 +930,55 @@ body {
 }
 
 @keyframes polaroidPulse3 {
-  0%, 66.66%, 100% {
+  0%, 50%, 75%, 100% {
     transform: rotate(-3deg) scale(1) translateZ(0);
     z-index: 1;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
   }
-  71% {
+  53% {
     transform: rotate(-1deg) scale(1.12) translateZ(40px);
     z-index: 20;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
   }
-  95% {
+  72% {
     transform: rotate(-1deg) scale(1.12) translateZ(40px);
+    z-index: 20;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes polaroidPulse4 {
+  0%, 75%, 100% {
+    transform: rotate(3deg) scale(1) translateZ(0);
+    z-index: 1;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  78% {
+    transform: rotate(0deg) scale(1.12) translateZ(40px);
+    z-index: 20;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  97% {
+    transform: rotate(0deg) scale(1.12) translateZ(40px);
     z-index: 20;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15);
   }
 }
 
 .polaroid-1 {
-  animation: polaroidPulse1 6s ease-in-out infinite;
+  animation: polaroidPulse1 8s ease-in-out infinite;
 }
 
 .polaroid-2 {
-  animation: polaroidPulse2 6s ease-in-out infinite;
+  animation: polaroidPulse2 8s ease-in-out infinite;
 }
 
 .polaroid-3 {
-  animation: polaroidPulse3 6s ease-in-out infinite;
+  animation: polaroidPulse3 8s ease-in-out infinite;
+}
+
+.polaroid-4 {
+  animation: polaroidPulse4 8s ease-in-out infinite;
 }
 
 .polaroid:hover {
@@ -1004,6 +1034,10 @@ body {
 
 .polaroid-3 .polaroid-pin {
   background: linear-gradient(135deg, #F9B233, #F39C12);
+}
+
+.polaroid-4 .polaroid-pin {
+  background: linear-gradient(135deg, #5B8DEE, #3867D6);
 }
 
 /* --- Product Details (colonne droite) --- */
@@ -2527,7 +2561,7 @@ body {
   }
 
   .product-gallery {
-    min-height: 420px;
+    min-height: 520px;
   }
 
   .polaroid-1 {
@@ -2543,6 +2577,12 @@ body {
   .polaroid-3 {
     width: 170px;
     left: 20%;
+  }
+
+  .polaroid-4 {
+    width: 170px;
+    right: 5%;
+    bottom: -60px;
   }
 
   .product-details {
@@ -2754,25 +2794,31 @@ body {
   }
 
   .product-gallery {
-    min-height: 380px;
+    min-height: 480px;
   }
 
   .polaroid-1 {
-    width: 170px;
+    width: 150px;
     left: 0;
     top: 0;
   }
 
   .polaroid-2 {
-    width: 155px;
+    width: 140px;
     right: 0;
     top: 30px;
   }
 
   .polaroid-3 {
-    width: 150px;
+    width: 135px;
     left: 15%;
-    bottom: 0;
+    bottom: 60px;
+  }
+
+  .polaroid-4 {
+    width: 140px;
+    right: 5%;
+    bottom: -40px;
   }
 
   .polaroid {
